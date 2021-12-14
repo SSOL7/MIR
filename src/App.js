@@ -11,9 +11,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/invoices">Invoices</Link>
-        <Link to="/expenses">Expenses</Link>
+        <Link to="/">Taloluettelo</Link>
+        <Link to="/invoices">Laskulomake</Link>
+        <Link to="/expenses">Kulut</Link>
       </nav>
     <Routes>
       <Route path="/" element={<Home />} />

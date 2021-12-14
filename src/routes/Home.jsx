@@ -18,7 +18,6 @@ function Home() {
 
     return (
         <div>
-            <h1>Home</h1>
             <ul>
       {items.map(item => {
         return (
@@ -27,7 +26,7 @@ function Home() {
                 <img src={Seoul} alt="seoul" />
                 <h3>{item.name}</h3>
                 <p>{item.email}</p>
-                <Link to={`/invoices/${item.id}`}>View Details</Link>
+                <Link to={`/invoices/${item.id}`}>Kerro lisää</Link>
             </div>
         </li>
         )
