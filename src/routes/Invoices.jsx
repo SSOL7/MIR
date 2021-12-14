@@ -9,7 +9,7 @@ function Invoices() {
     const [formValues, setFormValues] = useState(initialValues);
     const [formErrors, setFormErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
-    const [number, setNumber] = useState("");
+    //const [number, setNumber] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +39,7 @@ function Invoices() {
     if (!values.number) {
         errors.number = "Phone number is required!";
       } else if (!number.test(values.number)) {
-        errors.number = "That's not a valid phone number!";
+        errors.number = "Only numbers allowed in this field!";
       } else if (values.number.length < 10) {
         errors.number = "Phone number must be at least 10 characters!";
       }
@@ -68,22 +68,21 @@ function Invoices() {
       )}
 
       <form onSubmit={handleSubmit}>
-        <div className="ui form">
+        <div className="form">
         <div className="field">
             <label>Price</label>
             <input
               type="text"
               name="number"
-              placeholder="Price"
               value={formValues.number}
               onChange={handleChange}
-              />
+              />+
               <p><strong>{formErrors.number}</strong></p>
             <br />
+            <label>Username</label>
             <input
               type="text"
               name="username"
-              placeholder="Username"
               value={formValues.username}
               onChange={handleChange}
             />
@@ -94,7 +93,6 @@ function Invoices() {
             <input
               type="text"
               name="email"
-              placeholder="Email"
               value={formValues.email}
               onChange={handleChange}
             />
@@ -105,7 +103,6 @@ function Invoices() {
             <input
               type="password"
               name="password"
-              placeholder="Password"
               value={formValues.password}
               onChange={handleChange}
             />
