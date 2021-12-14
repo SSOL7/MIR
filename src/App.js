@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import {Link, BrowserRouter, Routes, Route} from 'react-router-dom';
+import Invoices from './routes/Invoices';
+import Expenses from './routes/Expenses';
+import Home from './routes/Home';
+import ErrorPage from './routes/Errorpage';
+import InvoiceDetail from './routes/InvoiceDetail';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/invoices">Invoices</Link>
+        <Link to="/expenses">Expenses</Link>
+      </nav>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/expenses" element={<Expenses />} />
+      <Route path="/invoices" element={<Invoices />} />
+      <Route path="/invoices/:id" element={<InvoiceDetail />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
+  </BrowserRouter>
     </div>
   );
 }
