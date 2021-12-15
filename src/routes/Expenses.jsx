@@ -47,6 +47,8 @@ function Expenses() {
 
     return (
 <>
+
+<h2>Henkilöluettelo</h2>
     <select>
       {houses.map(item => (
         <option
@@ -58,7 +60,7 @@ function Expenses() {
       ))}
     </select>
 
-    
+
 
 
     <select>

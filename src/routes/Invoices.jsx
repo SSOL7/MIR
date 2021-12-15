@@ -58,11 +58,11 @@ function Invoices() {
     return errors;
   };
 
-  
+
 
     return (
         <div>
-            <h1>Lisää uusi lasku</h1>
+            <h1>uusi lasku</h1>
             {Object.keys(formErrors).length === 0 && isSubmit ? (
         <div className="ui message success">Uusi lasku lisätty</div>
       ) : (
